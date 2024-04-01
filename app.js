@@ -1,0 +1,17 @@
+const express = require("express");
+const cors = require("cors");
+const app = express();
+
+app.use(cors());
+
+app.use(express.json());
+
+// DB Connection
+const conn = require("./db/conn");
+
+conn();
+
+app.listen("INSERT PORT HERE" , function() {
+    console.log("Server is online.");
+})
+
