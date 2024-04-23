@@ -1,0 +1,15 @@
+// Using "REST Client" extension. 
+
+POST http://localhost:3000/api/services
+Content-Type: application/json
+
+{
+    "name": "Name Test",
+    "description": "Description Test",
+    "price": 1400,
+    "image": "https://www.pexels.com/photo/purple-fireworks-effect-1190298/"
+}
+
+###
+
+GET http://localhost:3000/api/services
