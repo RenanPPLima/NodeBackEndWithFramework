@@ -4,12 +4,20 @@ POST http://localhost:3000/api/services
 Content-Type: application/json
 
 {
-    "name": "Name Test",
-    "description": "Description Test",
-    "price": 1400,
+    "name": "Name",
+    "description": "Description",
+    "price": 580,
     "image": "https://www.pexels.com/photo/purple-fireworks-effect-1190298/"
 }
 
 ###
 
 GET http://localhost:3000/api/services
+
+###
+
+GET http://localhost:3000/api/services/662707a2b4a2c3c6fe3926c8
+
+###
+
+DELETE http://localhost:3000/api/services/662707a2b4a2c3c6fe3926c8
