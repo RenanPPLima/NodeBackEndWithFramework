@@ -21,3 +21,16 @@ GET http://localhost:3000/api/services/662707a2b4a2c3c6fe3926c8
 ###
 
 DELETE http://localhost:3000/api/services/662707a2b4a2c3c6fe3926c8
+
+###
+
+PUT http://localhost:3000/api/services/662707a2b4a2c3c6fe3926c8
+
+Content-Type: application/json
+
+{
+    "name": "Update TEST",
+    "description": "Update Description TEST",
+    "price": 351615,
+    "image": "https://www.pexels.com/photo/purple-fireworks-effect-1190298/"
+}
