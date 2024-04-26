@@ -46,8 +46,7 @@ const serviceController = {
         res.json(service);
 
         } catch (error) {
-            console.log(error);
-            console.log("Incorrect ID or ID pattern.")
+            return res.status(400).json({msg: "Incorrect ID or ID pattern"})
             
         }
     },
@@ -68,9 +67,28 @@ const serviceController = {
             res.status(200).json({ deletedService, msg: "Service deleted successfully." })
             
         } catch (error) {
-            console.log(error);
-            console.log("Check ID or ID pattern.");
+            return res.status(400).json({msg: "Incorrect ID or ID pattern"})
         }
+    },
+
+    update: async (req, res) => {
+        const id = req.params.id;
+
+        const service = {
+            name: req.body.name,
+            description: req.body.description,
+            price: req.body.price,
+            image: req.body.image,
+        };
+
+        const updatedService = await ServiceModel.findByIdAndUpdate(id, service);
+
+        if(!updatedService){
+            res.status(404).json({ msg: "Service not found." });
+            return;
+        }
+
+        res.status(200).json({ service, msg: "Service updated successfully." });
     }
 };
 
