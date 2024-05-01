@@ -72,7 +72,8 @@ const serviceController = {
     },
 
     update: async (req, res) => {
-        const id = req.params.id;
+        try {
+            const id = req.params.id;
 
         const service = {
             name: req.body.name,
@@ -89,7 +90,11 @@ const serviceController = {
         }
 
         res.status(200).json({ service, msg: "Service updated successfully." });
-    }
+            
+        } catch (error) {
+            return res.status(400).json({msg: "Incorrect ID or ID pattern"})
+        }
+    },
 };
 
 module.exports = serviceController;
